@@ -1,0 +1,3 @@
+enum ServerFailure {
+  serverError,
+}
