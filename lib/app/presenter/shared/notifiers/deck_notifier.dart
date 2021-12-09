@@ -12,7 +12,9 @@ class DeckNotifier extends StateNotifier<DeckState> {
   final DeckService service;
   DeckNotifier(this.service) : super(const DeckState.initial());
 
-  Future<void> getToken(List<String> ids) async {
+  DeckState get last => state;
+
+  Future<void> getHeroes(List<String> ids) async {
     state = const DeckState.loadInProgress();
     final result = await service.fetchHeroes(ids);
 

@@ -22,6 +22,9 @@ dependencies:
   chewie: ^1.2.2
   video_player: ^2.2.7
   shared_preferences: ^2.0.9
+  google_fonts: ^2.1.0
+  oauth_dio: ^0.2.6
+  stacked_card_carousel: ^0.0.3-nullsafety.1
 
 dev_dependencies:
   flutter_test:

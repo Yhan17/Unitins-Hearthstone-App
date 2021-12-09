@@ -11,6 +11,7 @@ import '../models/hero_model.dart';
 final deckServiceProvider = Provider<DeckService>(
   (ref) => DeckServiceImpl(ref.read(hearthstoneClientProvider)),
 );
+
 class DeckServiceImpl extends DeckService {
   final HearthstoneClient client;
 
@@ -23,8 +24,7 @@ class DeckServiceImpl extends DeckService {
       final List<HeroEntity> list = [];
 
       for (var id in ids) {
-        final result = await client.get('/decks', queryParameters: {
-          'region': 'us',
+        final result = await client.get('/deck', queryParameters: {
           'locale': 'en_US',
           'code': id,
         });

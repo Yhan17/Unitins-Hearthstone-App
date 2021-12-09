@@ -12,6 +12,8 @@ class AuthNotifier extends StateNotifier<AuthState> {
   final AuthService service;
   AuthNotifier(this.service) : super(const AuthState.initial());
 
+  AuthState get last => state;
+
   Future<void> getToken() async {
     state = const AuthState.loadInProgress();
     final result = await service.getAuthorizationCode();
